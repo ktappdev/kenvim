@@ -64,7 +64,6 @@ vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-vim.keymap.set('n', '<leader>e', '<cmd>:Neotree toggle<CR>', { desc = 'Open [E]xplorer' })
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -195,6 +194,7 @@ require('lazy').setup {
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
       }
     end,
   },
@@ -290,7 +290,7 @@ require('lazy').setup {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find files' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -725,6 +725,14 @@ require('lazy').setup {
 -- Load the colorscheme here
 vim.cmd.colorscheme 'witch'
 -- You can configure highlights by doing something like
-vim.cmd.hi 'Comment gui=none'
+-- vim.cmd.hi 'Comment gui=none'
+
+-- Extra easy to find keymaps
+vim.keymap.set('n', '<leader>e', '<cmd>:Neotree toggle<CR>', { desc = 'Open [E]xplorer' })
+vim.keymap.set('n', '<M-w>', '<cmd>:wa<CR>', { desc = '[W]rite all open files' })
+vim.keymap.set('n', '<M-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
+vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
+vim.keymap.set('i', 'jk', '<esc>')
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
