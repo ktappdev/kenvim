@@ -725,7 +725,7 @@ require('lazy').setup {
 -- Load the colorscheme here
 vim.cmd.colorscheme 'witch'
 -- You can configure highlights by doing something like
--- vim.cmd.hi 'Comment gui=none'
+vim.cmd.hi 'Comment gui=none'
 
 -- Extra easy to find keymaps
 vim.keymap.set('n', '<leader>e', '<cmd>:Neotree toggle<CR>', { desc = 'Open [E]xplorer' })
