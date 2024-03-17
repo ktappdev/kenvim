@@ -730,13 +730,11 @@ vim.cmd.hi 'Comment gui=none'
 
 -- Extra easy to find keymaps
 vim.keymap.set('n', '<leader>e', '<cmd>:Neotree toggle<CR>', { desc = 'Open [E]xplorer' })
-vim.keymap.set('n', '<M-w>', '<cmd>:wa<CR>', { desc = '[W]rite all open files' })
-vim.keymap.set('n', '<M-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
+vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files' })
+-- vim.keymap.set('n', '<C-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
 vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
 vim.keymap.set('i', 'jk', '<esc>')
-
 vim.g.startup_bookmarks = {
-  ['I'] = '~/.config/nvim/init.lua',
   ['Z'] = '~/.zshrc',
 }
 -- The line beneath this is called `modeline`. See `:help modeline`
