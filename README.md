@@ -40,3 +40,8 @@ KeNVim is released under the [MIT License](LICENSE).
 ---
 
 Get ready to experience coding like never before with KeNVim! We can't wait to see what you'll build with this powerful Neovim setup.
+
+<img width="1552" alt="Screenshot 2024-04-08 at 6 29 40 PM" src="https://github.com/ktappdev/kenvim/assets/66100652/51701f8d-bb95-4e24-95c9-09e94976d323">
+<img width="1552" alt="Screenshot 2024-04-08 at 6 31 19 PM" src="https://github.com/ktappdev/kenvim/assets/66100652/8dd944f1-8c47-44cf-8a25-fa23422b9289">
+<img width="1552" alt="Screenshot 2024-04-08 at 6 31 45 PM" src="https://github.com/ktappdev/kenvim/assets/66100652/b787b7b5-d25a-4086-bd41-dad94c01da97">
+
