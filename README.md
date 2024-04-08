@@ -22,9 +22,10 @@ Welcome to KeNVim, a meticulously crafted Neovim setup designed to supercharge y
 
 Installing KeNVim is a breeze. Simply follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/kenvim.git`
-2. Navigate to the cloned directory: `cd kenvim`
-3. Run the installation script: `./install.sh`
+1. Clone the repository: `git clone https://github.com/your-username/kenvim.git kenvim`
+2.  Set this alias in your zshrc to be able to run this distro with just "ken" 
+```alias ken="NVIM_APPNAME=kenvim nvim"```
+3. type "ken" in your terminal
 
 And that's it! KeNVim will be up and running, ready to elevate your coding experience.
 
