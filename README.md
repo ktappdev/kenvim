@@ -10,6 +10,13 @@ Welcome to KeNVim, a meticulously crafted Neovim setup designed to supercharge y
 - **Lualine:** A sleek and highly customizable status line, keeping you informed about your coding environment at a glance.
 - **Noice:** A well-designed UI notification manager, ensuring you never miss important updates or events.
 - **Out-of-the-Box Support:** KeNVim comes pre-configured with essential tools and plugins for JavaScript/TypeScript, Go, Python, and React development, saving you valuable setup time.
+- **Conform:** A powerful formatting tool that ensures consistent code style across your project.
+- **Auto Pairs:** An intelligent auto-pairing plugin that automatically pairs brackets, quotes, and more.
+- **Grapple:** A powerful text-object plugin that enhances text manipulation capabilities.
+- **Yanky:** A sophisticated clipboard management plugin that streamlines copy-paste operations.
+- **WhichKey:** An intuitive key binding helper that displays available keymaps for seamless navigation.
+- **Keymaps File:** A dedicated file for easy customization of keybindings, allowing you to tailor the experience to your preferences.
+- **Options File:** A carefully curated selection of options to optimize your Neovim experience out of the box.
 
 ## Installation
 
