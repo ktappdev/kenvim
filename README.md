@@ -27,7 +27,7 @@ Installing KeNVim is a breeze. Simply follow these steps:
 ```alias ken="NVIM_APPNAME=kenvim nvim"```
 3. type "ken" in your terminal
 
-And that's it! KeNVim will be up and running, ready to elevate your coding experience.
+And that's it! KenVim will be up and running, ready to elevate your coding experience.
 
 ## Customization
 
@@ -35,15 +35,15 @@ While KeNVim comes with a well-rounded set of configurations, we understand that
 
 ## Contributing
 
-We welcome contributions from the community! If you have a feature request, bug report, or want to contribute code, please follow our [Contributing Guidelines](CONTRIBUTING.md).
+We welcome contributions from the community!
 
 ## Support
 
-If you encounter any issues or have questions, please don't hesitate to reach out to us. You can open an issue on our [GitHub repository](https://github.com/your-username/kenvim/issues) or join our [Discord server](https://discord.gg/your-invite-link) for community support.
+If you encounter any issues or have questions, please don't hesitate to reach out to us. You can open an issue on our [GitHub repository](https://github.com/your-username/kenvim/issues) or join our [Discord server](https://discord.gg/tm9HfqUNfw) for community support.
 
 ## License
 
-KeNVim is released under the [MIT License](LICENSE).
+KenVim is released under the [MIT License](LICENSE).
 
 ---
 
