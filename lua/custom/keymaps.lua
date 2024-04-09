@@ -4,12 +4,10 @@ local map = vim.api.nvim_set_keymap
 -- Leader key
 -- vim.g.mapleader = " "
 
--- Normal mode keymaps
--- map("n", "<leader>w", ":w<CR>", { noremap = true }) -- Save file
--- map("n", "<leader>q", ":q<CR>", { noremap = true }) -- Quit
-
+-- remove the highlight asfter a search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set('n', '<leader>cs', ':set spell!<CR>', { desc = 'Toggle text/code spelling', silent = true })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -40,7 +38,7 @@ vim.keymap.set('n', '<c-n>', '<Plug>(YankyNextEntry)')
 -- Extra easy to find keymaps
 vim.keymap.set('n', '<leader>sc', '<cmd>Telescope colorscheme<cr>', { desc = '[S]earch [C]olorscheme with preview' })
 vim.keymap.set('n', '<leader>e', '<cmd>:Neotree toggle<CR>', { desc = 'Open [E]xplorer' })
-vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files' })
+vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files', silent = true })
 -- vim.keymap.set('n', '<C-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
 vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
 vim.keymap.set('i', 'jk', '<esc>')
