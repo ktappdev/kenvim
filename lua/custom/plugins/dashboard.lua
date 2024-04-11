@@ -11,31 +11,24 @@ return {
 		local v = vim.version()
 		local version = " v" .. v.major .. "." .. v.minor .. "." .. v.patch
 
-		-- Set header
-		dashboard.section.header.val =
-
-		[[
-       ,--.                   ,--.                              ____
-   ,--/  /|    ,---,.       ,--.'|               ,---,        ,'  , `.
-,---,': / '  ,'  .' |   ,--,:  : |       ,---.,`--.' |     ,-+-,.' _ |
-:   : '/ / ,---.'   |,`--.'`|  ' :      /__./||   :  :  ,-+-. ;   , ||
-|   '   ,  |   |   .'|   :  :  | | ,---.;  ; |:   |  ' ,--.'|'   |  ;|
-'   |  /   :   :  |-,:   |   \ | :/___/ \  | ||   :  ||   |  ,', |  ':
-|   ;  ;   :   |  ;/||   : '  '; |\   ;  \ ' |'   '  ;|   | /  | |  ||
-:   '   \  |   :   .''   ' ;.    ; \   \  \: ||   |  |'   | :  | :  |,
-|   |    ' |   |  |-,|   | | \   |  ;   \  ' .'   :  ;;   . |  ; |--'
-'   : |.  \'   :  ;/|'   : |  ; .'   \   \   '|   |  '|   : |  | ,
-|   | '_\.'|   |    \|   | '`--'      \   `  ;'   :  ||   : '  |/
-'   : |    |   :   .''   : |           :   \ |;   |.' ;   | |`-'
-;   |,'    |   | ,'  ;   |.'            '---" '---'   |   ;/
-'---'      `----'    '---'                            '---'
-]]
-
-
+		dashboard.section.header.val = {
+			"           .'\\   /`.           ",
+			"         .'.-.`-'.-.`.         ",
+			"    ..._:   .-. .-.   :_...    ",
+			"  .'    '-.(o ) (o ).-'    `.  ",
+			" :  _    _ _`~(_)~`_ _    _  : ",
+			":  /:   ' .-=_   _=-. `   ;\\  :",
+			":   :|-.._  '     `  _..-|:   :",
+			" :   `:| |`:-:-.-:-:'| |:'   : ",
+			"  `.   `.| | | | | | |.'   .'  ",
+			"    `.   `-:_| | |_:-'   .'    ",
+			"      `-._   ````    _.-'      ",
+			"          ``-------''          "
+		}
 
 		dashboard.section.buttons.val = {
-			dashboard.button("n", "   New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("c", "   Configuration", ":e ~/.config/kenvim/init.lua<CR>"),
+			-- dashboard.button("n", "   New file", ":ene <BAR> startinsert <CR>"),
+			-- dashboard.button("c", "   Configuration", ":e ~/.config/kenvim/init.lua<CR>"),
 		}
 
 		function centerText(text, width)
