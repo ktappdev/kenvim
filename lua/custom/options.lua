@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.cmd.hi 'Comment gui=none'
+
 -- Set spell check to on by default
 -- vim.cmd.set 'spell'
 -- [[ Setting options ]]

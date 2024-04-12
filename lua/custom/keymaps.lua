@@ -1,11 +1,8 @@
 -- keymaps.lua
 local map = vim.api.nvim_set_keymap
-
--- Leader key
--- vim.g.mapleader = " "
-
 -- remove the highlight asfter a search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')
 
 vim.keymap.set('n', '<leader>cs', ':set spell!<CR>', { desc = 'Toggle text/code spelling', silent = true })
 -- Diagnostic keymaps
@@ -42,6 +39,3 @@ vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files', 
 -- vim.keymap.set('n', '<C-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
 vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
 vim.keymap.set('i', 'jk', '<esc>')
-vim.g.startup_bookmarks = {
-	['Z'] = '~/.zshrc',
-}
