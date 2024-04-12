@@ -46,7 +46,7 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     name = "tokyonight",
     transparent = true,
     opts = {
@@ -64,17 +64,17 @@ return {
       require("monokai-pro").setup({
         transparent_background = true,
         transparent_mode = true,
-        -- background_clear = {
-        --   -- "float_win",
-        --   "toggleterm",
-        --   "telescope",
-        --   -- "which-key",
-        --   "renamer",
-        --   "notify",
-        --   "nvim-tree",
-        --   -- "neo-tree",
-        --   "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
-        -- },
+        background_clear = {
+          -- "float_win",
+          "toggleterm",
+          "telescope",
+          -- "which-key",
+          "renamer",
+          "notify",
+          "nvim-tree",
+          -- "neo-tree",
+          "bufferline", -- better used if background of `neo-tree` or `nvim-tree` is cleared
+        },
       })
     end,
   },
@@ -88,10 +88,11 @@ return {
   },
   {
     'olivercederborg/poimandres.nvim',
-    lazy = false,
+    lazy = true,
     priority = 1000,
   },
   {
     'LunarVim/lunar.nvim',
+    lazy = true,
   },
 }
