@@ -39,3 +39,17 @@ vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files', 
 -- vim.keymap.set('n', '<C-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
 vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
 vim.keymap.set('i', 'jk', '<esc>')
+
+--Trouble keys
+vim.keymap.set("n", "<leader>tt", function() require("trouble").toggle() end, { desc = '[t]oggle [t]rouble' })
+vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end,
+  { desc = '[t]rouble [w]orkspace' })
+vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document_diagnostics") end,
+  { desc = '[t]oggle [d]iagnostics' })
+vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end, { desc = '[t]oggle [q]uick Fix' })
+vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end, { desc = '[t]oggle [l]oclist' })
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end, { desc = '[t]oggle [r]references' })
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree' })
+--
+--Stole this from Prime
+vim.keymap.set('n', '<leader>n', "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", { desc = 'Go error snippet' })

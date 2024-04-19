@@ -1,3 +1,5 @@
+-- dosent work well with typescipt-tools
+-- switch to tsserver then enable
 return {
 	{
 		"utilyre/barbecue.nvim",
