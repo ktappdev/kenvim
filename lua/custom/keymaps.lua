@@ -53,3 +53,7 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree' })
 --
 --Stole this from Prime
 vim.keymap.set('n', '<leader>n', "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", { desc = 'Go error snippet' })
+-- Git key bindings
+vim.keymap.set("n", '<leader>gl', '<cmd>:LazyGit<CR>', { desc = 'LazyGit' })
+vim.keymap.set("n", '<leader>gc', '<cmd>:Neogit commit<CR>', { desc = 'LazyGit' })
+vim.keymap.set("n", '<leader>gg', '<cmd>:neogit<CR>', { desc = 'LazyGit' })

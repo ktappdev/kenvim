@@ -1,6 +1,9 @@
 return {
 	{ -- LSP Configuration & Plugins
 		'neovim/nvim-lspconfig',
+		opts = {
+			inlay_hints = { enabled = true },
+		},
 		dependencies = {
 			-- Automatically install LSPs and related tools to stdpath for neovim
 			'williamboman/mason.nvim',
@@ -111,7 +114,7 @@ return {
 			local servers = {
 				clangd = {},
 				gopls = {},
-				-- pyright = {},
+				pyright = {},
 				rust_analyzer = {},
 				-- tsserver = {},
 
