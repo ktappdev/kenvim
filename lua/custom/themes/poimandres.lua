@@ -1,7 +1,10 @@
 return {
   {
     'olivercederborg/poimandres.nvim',
-    lazy = true,
+    opts = {
+      transparent_background = true,
+    },
+    lazy = false,
     priority = 1000,
-  }
+  },
 }

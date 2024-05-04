@@ -1,7 +1,54 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.cmd.hi 'Comment gui=none'
+-- Set tab stop for Go files
+vim.cmd [[
+  autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+]]
+-- Set number of spaces for indentation
+-- vim.opt.shiftwidth = 4
 
+-- vim.opt.tabstop = 4
+-- Use spaces instead of tabs
+vim.opt.expandtab = true
+
+-- Enable syntax highlighting
+vim.opt.syntax = 'on'
+
+-- Set color scheme (e.g., gruvbox)
+vim.opt.termguicolors = true
+
+-- Highlight cursor line
+vim.opt.cursorline = true
+
+-- Show matching brackets
+vim.opt.showmatch = true
+
+-- Set line wrapping
+vim.opt.wrap = false
+
+-- Set scroll offset
+vim.opt.scrolloff = 8
+
+-- Set search to be case-insensitive unless uppercase is used
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Enable auto-indentation
+vim.opt.autoindent = true
+
+-- Set backup directory
+vim.opt.backupdir = vim.fn.stdpath 'data' .. '/backup//'
+
+-- Set undo directory
+vim.opt.undodir = vim.fn.stdpath 'data' .. '/undodir//'
+
+-- Set encoding
+vim.opt.encoding = 'utf-8'
+
+-- Set file format (e.g., unix)
+vim.opt.fileformat = 'unix'
+
+vim.cmd.hi 'Comment gui=none'
 -- Set spell check to on by default
 -- vim.cmd.set 'spell'
 -- [[ Setting options ]]
@@ -16,7 +63,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 --
 -- Don't show the mode, since it's already in status line
-vim.opt.showmode = true
+vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.

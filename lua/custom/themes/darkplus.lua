@@ -1,9 +1,10 @@
 return {
   {
-    "lunarvim/darkplus.nvim",
+    'lunarvim/darkplus.nvim',
     lazy = false,
     opts = {
-      darkplus_style = "dark",
+      darkplus_style = 'dark',
+      transparent_background = true,
     },
   },
 }

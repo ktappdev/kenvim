@@ -1,4 +1,6 @@
 return {
-  'Mofiqul/vscode.nvim'
+  'Mofiqul/vscode.nvim',
+  opts = {
+    transparent_background = true,
+  },
 }
-

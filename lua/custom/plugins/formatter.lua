@@ -8,7 +8,7 @@ return {
         lsp_fallback = true,
       },
       formatters_by_ft = {
-        -- lua = { 'stylua' },
+        lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'black' },
         --
@@ -16,8 +16,8 @@ return {
         -- is found.
         javascript = { { 'prettier' } },
         typescript = { { 'prettier' } },
-        typescriptreact = { { 'prettierd', 'prettier' } },
-        javascriptreact = { { 'prettierd', 'prettier' } },
+        typescriptreact = { { 'prettier' } },
+        javascriptreact = { { 'prettier' } },
         go = { 'gofmt' },
       },
     },
