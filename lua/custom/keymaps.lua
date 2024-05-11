@@ -4,6 +4,8 @@ local map = vim.api.nvim_set_keymap
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')
 vim.keymap.set('n', 'q', '<cmd>:q<CR>')
+vim.keymap.set('n', '<leader>bb', '<C-^>') -- just ti the previous file
+
 
 vim.keymap.set('n', '<leader>cs', ':set spell!<CR>', { desc = 'Toggle text/code spelling', silent = true })
 -- Diagnostic keymaps
@@ -69,9 +71,11 @@ vim.keymap.set('n', '<leader>gl', '<cmd>:LazyGit<CR>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>gc', '<cmd>:Neogit commit<CR>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>gg', '<cmd>:Neogit<CR>', { desc = 'LazyGit' })
 -- clear all console.logs from file
-vim.keymap.set('n', '<leader>cL', [[:%s/console\.log([^)]*);//g<CR>]], { noremap = true, silent = true, desc = 'Clear all console logs' })
+vim.keymap.set('n', '<leader>cL', [[:%s/console\.log([^)]*);//g<CR>]],
+  { noremap = true, silent = true, desc = 'Clear all console logs' })
 -- sort tailwind classes
 vim.keymap.set('n', '<leader>ct', ':TailwindSort<CR>', { noremap = true, silent = true, desc = 'Tailwind Sort' })
-vim.keymap.set('n', '<leader>cx', ':TailwindSortOnSaveToggle<CR>', { noremap = true, silent = true, desc = 'Tailwind Sort on save toggle' })
+vim.keymap.set('n', '<leader>cx', ':TailwindSortOnSaveToggle<CR>',
+  { noremap = true, silent = true, desc = 'Tailwind Sort on save toggle' })
 
 vim.keymap.set('n', '<leader>gf', "<cmd>lua require('go.format').gofmt()<CR>", { desc = 'Go format' })
