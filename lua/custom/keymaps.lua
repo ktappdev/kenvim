@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, { desc = 'Show line
 vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Show line diagnostic [D]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
@@ -56,9 +56,10 @@ end, { desc = '[t]oggle [d]iagnostics' })
 vim.keymap.set('n', '<leader>tq', function()
   require('trouble').toggle 'quickfix'
 end, { desc = '[t]oggle [q]uick Fix' })
-vim.keymap.set('n', '<leader>tl', function()
-  require('trouble').toggle 'loclist'
-end, { desc = '[t]oggle [l]oclist' })
+-- disabled becaus i want to use this for twilight
+-- vim.keymap.set('n', '<leader>tl', function()
+--   require('trouble').toggle 'loclist'
+-- end, { desc = '[t]oggle [l]oclist' })
 vim.keymap.set('n', 'gR', function()
   require('trouble').toggle 'lsp_references'
 end, { desc = '[t]oggle [r]references' })
@@ -79,3 +80,4 @@ vim.keymap.set('n', '<leader>cx', ':TailwindSortOnSaveToggle<CR>',
   { noremap = true, silent = true, desc = 'Tailwind Sort on save toggle' })
 
 vim.keymap.set('n', '<leader>gf', "<cmd>lua require('go.format').gofmt()<CR>", { desc = 'Go format' })
+vim.keymap.set('n', '<leader>tl', "<cmd>:Twilight<cr>", { desc = '[t]oggle Twi[l]ight' })
