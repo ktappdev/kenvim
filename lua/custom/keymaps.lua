@@ -5,6 +5,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')
 vim.keymap.set('n', 'q', '<cmd>:q<CR>')
 vim.keymap.set('n', '<leader>bb', '<C-^>') -- just ti the previous file
+vim.keymap.set('n', '<leader>ts', '<cmd>lua require("treesj").toggle()<cr>', { desc = 'Toggle line wrap' })
 
 
 vim.keymap.set('n', '<leader>cs', ':set spell!<CR>', { desc = 'Toggle text/code spelling', silent = true })
@@ -42,6 +43,10 @@ vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files', 
 -- vim.keymap.set('n', '<C-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
 vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
 vim.keymap.set('i', 'jk', '<esc>')
+vim.keymap.set('n', '<C-j>', '5j')
+vim.keymap.set('n', '<C-k>', '5k')
+-- vim.keymap.set('n', '<C-l>', '3w')
+-- vim.keymap.set('n', '<C-h>', '3b')
 
 --Trouble keys
 vim.keymap.set('n', '<leader>tt', function()
@@ -66,7 +71,7 @@ end, { desc = '[t]oggle [r]references' })
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree' })
 --
 --Stole this from Prime
-vim.keymap.set('n', '<leader>n', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>', { desc = 'Go error snippet' })
+-- vim.keymap.set('n', '<leader>n', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>', { desc = 'Go error snippet' })
 -- Git key bindings
 vim.keymap.set('n', '<leader>gl', '<cmd>:LazyGit<CR>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>gc', '<cmd>:Neogit commit<CR>', { desc = 'LazyGit' })
@@ -80,4 +85,8 @@ vim.keymap.set('n', '<leader>cx', ':TailwindSortOnSaveToggle<CR>',
   { noremap = true, silent = true, desc = 'Tailwind Sort on save toggle' })
 
 vim.keymap.set('n', '<leader>gf', "<cmd>lua require('go.format').gofmt()<CR>", { desc = 'Go format' })
+
+vim.keymap.set('n', '<leader>tp', "<cmd>lua require('precognition').toggle()<CR>", { desc = '[t]oggle [p]recognition' })
+vim.keymap.set('n', '<leader>cp', "<cmd>lua require('precognition').peek()<CR>", { desc = 'Precognition peek' })
 vim.keymap.set('n', '<leader>tl', "<cmd>:Twilight<cr>", { desc = '[t]oggle Twi[l]ight' })
+vim.keymap.set("n", "<leader>n", ":NnnPicker<cr>", { desc = 'nnn' })
