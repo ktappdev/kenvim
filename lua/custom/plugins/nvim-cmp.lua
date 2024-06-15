@@ -105,6 +105,7 @@ return {
         },
         sources = {
           { name = 'codeium' },
+          { name = "supermaven" },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },

@@ -6,7 +6,10 @@ vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')
 vim.keymap.set('n', 'q', '<cmd>:q<CR>')
 vim.keymap.set('n', '<leader>bb', '<C-^>') -- just ti the previous file
 vim.keymap.set('n', '<leader>ts', '<cmd>lua require("treesj").toggle()<cr>', { desc = 'Toggle line wrap' })
+vim.keymap.set('n', 'crl', ":%s/log\\.Println\\(.*\\)//gc<cr>", { desc = 'Clear all log.Println' })
+vim.keymap.set('n', 'crf', ":%s/fmt\\.Println\\(.*\\)//gc<cr>", { desc = 'Clear all fmt.Println' })
 
+vim.keymap.set('x', '<leader>cs', '<cmd>:CodeSnap<CR>', { desc = 'Code Snap to clipboard' })
 
 vim.keymap.set('n', '<leader>cs', ':set spell!<CR>', { desc = 'Toggle text/code spelling', silent = true })
 -- Diagnostic keymaps
@@ -43,24 +46,17 @@ vim.keymap.set('n', '<C-s>', '<cmd>:wa<CR>', { desc = '[W]rite all open files', 
 -- vim.keymap.set('n', '<C-q>', '<cmd>:qa<CR>', { desc = '[Q]uite all open files' })
 vim.keymap.set('i', 'jj', '<esc> :wa<cr>')
 vim.keymap.set('i', 'jk', '<esc>')
-vim.keymap.set('n', '<C-j>', '5j')
-vim.keymap.set('n', '<C-k>', '5k')
+-- vim.keymap.set('n', '<fn-j>', '5j')
+-- vim.keymap.set('n', '<fn-k>', '5k')
 -- vim.keymap.set('n', '<C-l>', '3w')
 -- vim.keymap.set('n', '<C-h>', '3b')
 
 --Trouble keys
-vim.keymap.set('n', '<leader>tt', function()
-  require('trouble').toggle()
-end, { desc = '[t]oggle [t]rouble' })
-vim.keymap.set('n', '<leader>tw', function()
-  require('trouble').toggle 'workspace_diagnostics'
-end, { desc = '[t]rouble [w]orkspace' })
-vim.keymap.set('n', '<leader>td', function()
-  require('trouble').toggle 'document_diagnostics'
-end, { desc = '[t]oggle [d]iagnostics' })
-vim.keymap.set('n', '<leader>tq', function()
-  require('trouble').toggle 'quickfix'
-end, { desc = '[t]oggle [q]uick Fix' })
+vim.keymap.set('n', '<leader>tt', "<cmd>Trouble diagnostics toggle<cr>", { desc = '[t]oggle [t]rouble' })
+vim.keymap.set('n', '<leader>tw', "<cmd>Trouble symbols toggle focus=false<cr>",
+  { desc = '[t]rouble [w]orkspace symbols' })
+vim.keymap.set('n', '<leader>td', "<cmd>Trouble loclist toggle<cr>", { desc = '[t]oggle [d]ocument local list' })
+vim.keymap.set('n', '<leader>tq', "<cmd>Trouble qflist toggle<cr>", { desc = '[t]oggle [q]uick Fix' })
 -- disabled becaus i want to use this for twilight
 -- vim.keymap.set('n', '<leader>tl', function()
 --   require('trouble').toggle 'loclist'

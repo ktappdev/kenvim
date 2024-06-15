@@ -1,6 +1,10 @@
 return {
-  'Mofiqul/vscode.nvim',
-  opts = {
-    transparent_background = true,
-  },
+  {
+    "askfiy/visual_studio_code",
+    priority = 100,
+    opts = {
+      mode = "dark",
+      transparent = true,
+    },
+  }
 }
