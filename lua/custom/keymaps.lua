@@ -1,3 +1,4 @@
+-- vim.lsp.inlay_hint.enable()
 -- keymaps.lua
 local map = vim.api.nvim_set_keymap
 -- remove the highlight asfter a search
@@ -10,7 +11,7 @@ vim.keymap.set('n', 'crl', ":%s/log\\.Println\\(.*\\)//gc<cr>", { desc = 'Clear 
 vim.keymap.set('n', 'crf', ":%s/fmt\\.Println\\(.*\\)//gc<cr>", { desc = 'Clear all fmt.Println' })
 
 vim.keymap.set('x', '<leader>cs', '<cmd>:CodeSnap<CR>', { desc = 'Code Snap to clipboard' })
-
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set('n', '<leader>cs', ':set spell!<CR>', { desc = 'Toggle text/code spelling', silent = true })
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
