@@ -17,7 +17,7 @@ require('Comment').setup {
   pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 }
 
-vim.cmd.colorscheme 'rose-pine'
+vim.cmd.colorscheme 'catppuccin-mocha'
 
 -- vim.opt.pumblend = 0 -- makes the popup suggestions background not see through
 
