@@ -19,7 +19,7 @@ require('Comment').setup {
 require('telekasten').setup({
   home = vim.fn.expand("~/zettelkasten"), -- Put the name of your notes directory here
 })
-vim.cmd.colorscheme 'catppuccin-mocha'
+vim.cmd.colorscheme 'default'
 
 -- vim.opt.pumblend = 0 -- makes the popup suggestions background not see through
 

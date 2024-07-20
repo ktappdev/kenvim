@@ -84,7 +84,7 @@ return {
 			vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 			vim.keymap.set('n', '<leader>s.', builtin.oldfiles,
 				{ desc = '[S]earch Recent Files ("." for repeat)' })
-			vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find files' })
+			-- vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find files' })
 			vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = '[ ] Find files' })
 
 			-- Slightly advanced example of overriding default behavior and theme

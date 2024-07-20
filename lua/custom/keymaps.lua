@@ -2,6 +2,16 @@
 -- keymaps.lua
 local map = vim.api.nvim_set_keymap
 -- remove the highlight asfter a search
+--
+-- keybinds for prompting with groq
+vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
+vim.keymap.set("v", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
+-- vim.keymap.set("v", "<leader>.", function() require("llm").prompt({ replace = true, service = "groq" }) end, { desc = "Prompt while replacing with groq" }))
+
+vim.keymap.set("n", "<leader><leader>", function()
+  require("telescope").extensions.smart_open.smart_open()
+end, { noremap = true, silent = true })
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')
 vim.keymap.set('n', 'q', '<cmd>:q<CR>')
