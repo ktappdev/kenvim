@@ -1,5 +1,6 @@
 return {
   'goolord/alpha-nvim',
+  enabled = false,
   event = 'VimEnter',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
@@ -8,8 +9,8 @@ return {
 
     local time = os.date '%H:%M'
     local date = os.date '%a %d %b'
-    local v = vim.version()
-    local version = ' v' .. v.major .. '.' .. v.minor .. '.' .. v.patch
+    -- local v = vim.version()
+    -- local version = ' v' .. v.major .. '.' .. v.minor .. '.' .. v.patch
 
     dashboard.section.header.val = {
       " __         __  __     ______     ______     ______   ______     ______     __  __    ",
@@ -39,7 +40,7 @@ return {
       -- " ",
       centerText(date, 50),
       centerText(time, 50),
-      centerText(version, 50),
+      -- centerText(version, 50),
     }
 
     -- Send config to alpha

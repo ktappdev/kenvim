@@ -12,14 +12,12 @@ require('lazy').setup {
   { import = 'custom.themes' },
   { import = 'custom.plugins' },
 }
+require('codeium').setup {}
 require('go').setup()
 require('Comment').setup {
   pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 }
-require('telekasten').setup({
-  home = vim.fn.expand("~/zettelkasten"), -- Put the name of your notes directory here
-})
-vim.cmd.colorscheme 'default'
+vim.cmd.colorscheme 'catppuccin'
 
 -- vim.opt.pumblend = 0 -- makes the popup suggestions background not see through
 

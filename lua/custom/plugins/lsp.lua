@@ -2,7 +2,7 @@ return {
 	{ -- LSP Configuration & Plugins
 		'neovim/nvim-lspconfig',
 		opts = {
-			inlay_hints = { enabled = true },
+			inlay_hints = { enabled = false },
 		},
 		dependencies = {
 			-- Automatically install LSPs and related tools to stdpath for neovim
@@ -130,35 +130,35 @@ return {
 				},
 				pyright = {},
 				rust_analyzer = {},
-				tsserver = {
-					settings = {
-						typescript = {
-							inlayHints = {
-								-- taken from https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration
-								includeInlayEnumMemberValueHints = true,
-								includeInlayFunctionLikeReturnTypeHints = true,
-								includeInlayFunctionParameterTypeHints = true,
-								includeInlayParameterNameHints = 'all',
-								includeInlayParameterNameHintsWhenArgumentMatchesName = true, -- false
-								includeInlayPropertyDeclarationTypeHints = true,
-								includeInlayVariableTypeHints = true,
-								includeInlayVariableTypeHintsWhenTypeMatchesName = true -- false
-							}
-						},
-						javascript = {
-							inlayHints = {
-								includeInlayEnumMemberValueHints = true,
-								includeInlayFunctionLikeReturnTypeHints = true,
-								includeInlayFunctionParameterTypeHints = true,
-								includeInlayParameterNameHints = 'all',
-								includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-								includeInlayPropertyDeclarationTypeHints = true,
-								includeInlayVariableTypeHints = true,
-								includeInlayVariableTypeHintsWhenTypeMatchesName = true
-							}
-						},
-					},
-				},
+				-- tsserver = {
+				-- 	settings = {
+				-- 		typescript = {
+				-- 			inlayHints = {
+				-- 				-- taken from https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration
+				-- 				includeInlayEnumMemberValueHints = true,
+				-- 				includeInlayFunctionLikeReturnTypeHints = true,
+				-- 				includeInlayFunctionParameterTypeHints = true,
+				-- 				includeInlayParameterNameHints = 'all',
+				-- 				includeInlayParameterNameHintsWhenArgumentMatchesName = true, -- false
+				-- 				includeInlayPropertyDeclarationTypeHints = true,
+				-- 				includeInlayVariableTypeHints = true,
+				-- 				includeInlayVariableTypeHintsWhenTypeMatchesName = true -- false
+				-- 			}
+				-- 		},
+				-- 		javascript = {
+				-- 			inlayHints = {
+				-- 				includeInlayEnumMemberValueHints = true,
+				-- 				includeInlayFunctionLikeReturnTypeHints = true,
+				-- 				includeInlayFunctionParameterTypeHints = true,
+				-- 				includeInlayParameterNameHints = 'all',
+				-- 				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				-- 				includeInlayPropertyDeclarationTypeHints = true,
+				-- 				includeInlayVariableTypeHints = true,
+				-- 				includeInlayVariableTypeHintsWhenTypeMatchesName = true
+				-- 			}
+				-- 		},
+				-- 	},
+				-- },
 
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--

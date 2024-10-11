@@ -1,9 +1,10 @@
 return {
 	{
 		"supermaven-inc/supermaven-nvim",
-		-- config = function()
-		-- 	require("supermaven-nvim").setup({})
-		-- end,
-		opts = {},
+		enabled = true,
+		opts = {
+			disable_inline_completion = true, -- disables inline completion for use with cmp
+			disable_keymaps = true,
+		},
 	},
 }

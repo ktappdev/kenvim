@@ -38,19 +38,13 @@ return {
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
 
       -- If you want to add a bunch of pre-configured snippets,
-      --    you can use this plugin to help you. It even has snippets
-      --    for various frameworks/libraries/etc. but you will have to
-      --    set up the ones that are useful for you.
       'rafamadriz/friendly-snippets',
     },
     config = function()
-      -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
@@ -61,12 +55,11 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = { completeopt = 'menu,menuone,noinsert' },
+        completion = {
+          completeopt = 'menu,menuone,noinsert',
+          autocomplete = false,
+        },
 
-        -- For an understanding of why these mappings were
-        -- chosen, you will need to read `:help ins-completion`
-        --
-        -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert {
           -- Select the [n]ext item
           ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -74,24 +67,13 @@ return {
           ['<C-p>'] = cmp.mapping.select_prev_item(),
 
           -- Accept ([y]es) the completion.
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
           ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- Manually trigger a completion from nvim-cmp.
-          --  Generally you don't need this, because nvim-cmp will display
-          --  completions whenever it has completion options available.
           ['<C-Space>'] = cmp.mapping.complete {},
 
-          -- Think of <c-l> as moving to the right of your snippet expansion.
-          --  So if you have a snippet that's like:
-          --  function $name($args)
-          --    $body
-          --  end
-          --
-          -- <c-l> will move you to the right of each of the expansion locations.
-          -- <c-h> is similar, except moving you backwards.
+          -- Snippet navigation
           ['<C-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
@@ -102,13 +84,35 @@ return {
               luasnip.jump(-1)
             end
           end, { 'i', 's' }),
+
+          -- New mappings for Tab and Shift-Tab
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            else
+              cmp.complete()
+            end
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
         },
+
         sources = {
           { name = 'codeium' },
           { name = "supermaven" },
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+        },
+
+        -- Disable event-triggered behavior
+        event_triggered_behavior = {
+          autocomplete = false,
         },
       }
     end,
