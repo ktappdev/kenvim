@@ -1,6 +1,4 @@
-#There were issues reported with your **which-key** mappings.
-Use `:checkhealth which-key` to find out more.
-Press ENTER or type command to continue KenVim: The Ultimate Neovim Setup
+#KenVim: The Ultimate Neovim Setup
 
 Welcome to KeNVim, a meticulously crafted Neovim setup designed to supercharge your coding experience. Whether you're a seasoned developer or just starting your journey, KeNVim provides a seamless and efficient environment tailored for JavaScript/TypeScript, Go, Python, and React development.
 
