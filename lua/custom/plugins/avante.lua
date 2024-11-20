@@ -5,15 +5,94 @@ return {
 		lazy = true,
 		event = "VeryLazy",
 		build = "make",
+		-- opts = {},
 		opts = {
-			-- add any opts here
-			provider = "openai",
-			openai = {
-				endpoint = "https://api.openai.com/v1",
-				model = "gpt-4o",
-				temperature = 0.1,
-				max_tokens = 4096,
-				["local"] = false,
+			provider = "openrouterQwen32b", -- available openrouterOpenAi also openai directly
+			-- openai = {
+			-- 	endpoint = "https://api.openai.com/v1",
+			-- 	model = "gpt-4o",
+			-- 	temperature = 0.1,
+			-- 	max_tokens = 4096,
+			-- 	["local"] = false,
+			-- },
+			-- claude = {
+			-- 	endpoint = "https://api.anthropic.com",
+			-- 	model = "claude-3-5-sonnet-20241022",
+			-- 	api_key_name = "ANTHROPIC_API_KEY",
+			-- 	temperature = 0.1,
+			-- 	max_tokens = 4096,
+			-- 	["local"] = false,
+			-- },
+			vendors = {
+				---@type AvanteProvider
+				openrouterGeminiexp = {
+					endpoint = "https://openrouter.ai/api/v1/chat/completions",
+					model = "google/gemini-exp-1114", -- The model you want to use
+					api_key_name = "OPENROUTER_API_KEY",
+					parse_curl_args = function(opts, code_opts)
+						return {
+							url = opts.endpoint,
+							headers = {
+								["Accept"] = "application/json",
+								["Content-Type"] = "application/json",
+								["Authorization"] = "Bearer " ..
+								    os.getenv(opts.api_key_name),
+								-- Optional headers for OpenRouter rankings
+								["HTTP-Referer"] = "localhost",
+								["X-Title"] = "nvim-avante",
+							},
+							body = {
+								model = opts.model,
+								messages = {
+									{ role = "system", content = code_opts.system_prompt },
+									{ role = "user",   content = require("avante.providers.openai").get_user_message(code_opts) },
+								},
+								temperature = 0.5,
+								max_tokens = 4096,
+								stream = true,
+							},
+						}
+					end,
+					-- OpenRouter follows OpenAI's response format, so we can use the OpenAI parser
+					parse_response_data = function(data_stream, event_state, opts)
+						require("avante.providers").openai.parse_response(data_stream,
+							event_state, opts)
+					end,
+				},
+				openrouterQwen32b = {
+					endpoint = "https://openrouter.ai/api/v1/chat/completions",
+					model = "qwen/qwen-2.5-coder-32b-instruct", -- The model you want to use
+					api_key_name = "OPENROUTER_API_KEY",
+					parse_curl_args = function(opts, code_opts)
+						return {
+							url = opts.endpoint,
+							headers = {
+								["Accept"] = "application/json",
+								["Content-Type"] = "application/json",
+								["Authorization"] = "Bearer " ..
+								    os.getenv(opts.api_key_name),
+								-- Optional headers for OpenRouter rankings
+								["HTTP-Referer"] = "localhost",
+								["X-Title"] = "nvim-avante",
+							},
+							body = {
+								model = opts.model,
+								messages = {
+									{ role = "system", content = code_opts.system_prompt },
+									{ role = "user",   content = require("avante.providers.openai").get_user_message(code_opts) },
+								},
+								temperature = 0.5,
+								max_tokens = 4096,
+								stream = true,
+							},
+						}
+					end,
+					-- OpenRouter follows OpenAI's response format, so we can use the OpenAI parser
+					parse_response_data = function(data_stream, event_state, opts)
+						require("avante.providers").openai.parse_response(data_stream,
+							event_state, opts)
+					end,
+				},
 			},
 		},
 		dependencies = {
@@ -26,7 +105,6 @@ return {
 					"MunifTanjim/nui.nvim",
 				},
 			},
-			--- The below is optional, make sure to setup it properly if you have lazy=true
 			{
 				"MeanderingProgrammer/render-markdown.nvim",
 				opts = {

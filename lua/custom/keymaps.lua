@@ -1,11 +1,14 @@
 -- vim.lsp.inlay_hint.enable()
+local opts = { noremap = true, silent = true }
 -- keymaps.lua
 local map = vim.api.nvim_set_keymap
 -- remove the highlight asfter a search
 --
 -- keybinds for prompting with groq
-vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
-vim.keymap.set("v", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end, { desc = "Prompt with groq" })
+vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end,
+  { desc = "Prompt with groq" })
+vim.keymap.set("v", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end,
+  { desc = "Prompt with groq" })
 -- vim.keymap.set("v", "<leader>.", function() require("llm").prompt({ replace = true, service = "groq" }) end, { desc = "Prompt while replacing with groq" }))
 
 vim.keymap.set("n", "<leader><leader>", function()
@@ -16,7 +19,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<CR>')
 vim.keymap.set('n', 'q', '<cmd>:q<CR>')
 vim.keymap.set('n', '<leader>bb', '<C-^>') -- just ti the previous file
-vim.keymap.set('n', '<leader>ts', '<cmd>lua require("treesj").toggle()<cr>', { desc = 'Toggle line wrap' })
+vim.keymap.set('n', '<leader>tl', '<cmd>lua require("treesj").toggle()<cr>', { desc = '[t]oggle [l]ine wrap' })
 vim.keymap.set('n', 'crl', ":%s/log\\.Println\\(.*\\)//gc<cr>", { desc = 'Clear all log.Println' })
 vim.keymap.set('n', 'crf', ":%s/fmt\\.Println\\(.*\\)//gc<cr>", { desc = 'Clear all fmt.Println' })
 
@@ -81,8 +84,8 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree' })
 -- vim.keymap.set('n', '<leader>n', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>', { desc = 'Go error snippet' })
 -- Git key bindings
 vim.keymap.set('n', '<leader>gl', '<cmd>:LazyGit<CR>', { desc = 'LazyGit' })
-vim.keymap.set('n', '<leader>gc', '<cmd>:Neogit commit<CR>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>gg', '<cmd>:Neogit<CR>', { desc = 'LazyGit' })
+vim.keymap.set('n', '<leader>gc', ':!gitcomm --auto %<CR>', { noremap = true, silent = false })
 -- clear all console.logs from file
 vim.keymap.set('n', '<leader>cL', [[:%s/console\.log([^)]*);//g<CR>]],
   { noremap = true, silent = true, desc = 'Clear all console logs' })
@@ -95,5 +98,16 @@ vim.keymap.set('n', '<leader>gf', "<cmd>lua require('go.format').gofmt()<CR>", {
 
 vim.keymap.set('n', '<leader>tp', "<cmd>lua require('precognition').toggle()<CR>", { desc = '[t]oggle [p]recognition' })
 vim.keymap.set('n', '<leader>cp', "<cmd>lua require('precognition').peek()<CR>", { desc = 'Precognition peek' })
-vim.keymap.set('n', '<leader>tl', "<cmd>:Twilight<cr>", { desc = '[t]oggle Twi[l]ight' })
 vim.keymap.set("n", "<leader>n", ":NnnPicker<cr>", { desc = 'nnn' })
+
+--TERMINAL
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
+vim.keymap.set('n', 'tf', [[<Cmd>:ToggleTerm size=40 dir=cwd direction=float<CR>]], { desc = '[t]oggle [f]loating Term' })
+vim.keymap.set('n', 'tb', [[<Cmd>:ToggleTerm size=15 dir=cwd direction=horizontal<CR>]],
+  { desc = '[t]oggle [b]ottom Term' })

@@ -1,5 +1,4 @@
 require 'custom.options'
-require 'custom.keymaps'
 --NOTE: Making sure Lazy is installed
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -12,12 +11,14 @@ require('lazy').setup {
   { import = 'custom.themes' },
   { import = 'custom.plugins' },
 }
-require('codeium').setup {}
+-- require('codeium').setup {}
 require('go').setup()
 require('Comment').setup {
   pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 }
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'witch-dark'
+
+require 'custom.keymaps'
 
 -- vim.opt.pumblend = 0 -- makes the popup suggestions background not see through
 

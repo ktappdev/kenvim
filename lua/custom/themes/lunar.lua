@@ -1,7 +1,8 @@
 return {
   {
     'LunarVim/lunar.nvim',
-    lazy = true,
+    enabled = false,
+    lazy = false,
     transparent = true,
   }
 }
