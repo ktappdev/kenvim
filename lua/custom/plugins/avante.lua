@@ -27,7 +27,7 @@ return {
 				---@type AvanteProvider
 				openrouterGeminiexp = {
 					endpoint = "https://openrouter.ai/api/v1/chat/completions",
-					model = "google/gemini-exp-1114", -- The model you want to use
+					model = "google/gemini-pro-1.5",
 					api_key_name = "OPENROUTER_API_KEY",
 					parse_curl_args = function(opts, code_opts)
 						return {
