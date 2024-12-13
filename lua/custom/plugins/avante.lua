@@ -7,7 +7,7 @@ return {
 		build = "make",
 		-- opts = {},
 		opts = {
-			provider = "openrouterQwen32b", -- available openrouterOpenAi also openai directly
+			provider = "openrouterNova", -- available openrouterOpenAi also openai directly
 			-- openai = {
 			-- 	endpoint = "https://api.openai.com/v1",
 			-- 	model = "gpt-4o",
@@ -28,6 +28,40 @@ return {
 				openrouterGeminiexp = {
 					endpoint = "https://openrouter.ai/api/v1/chat/completions",
 					model = "google/gemini-pro-1.5",
+					api_key_name = "OPENROUTER_API_KEY",
+					parse_curl_args = function(opts, code_opts)
+						return {
+							url = opts.endpoint,
+							headers = {
+								["Accept"] = "application/json",
+								["Content-Type"] = "application/json",
+								["Authorization"] = "Bearer " ..
+								    os.getenv(opts.api_key_name),
+								-- Optional headers for OpenRouter rankings
+								["HTTP-Referer"] = "localhost",
+								["X-Title"] = "nvim-avante",
+							},
+							body = {
+								model = opts.model,
+								messages = {
+									{ role = "system", content = code_opts.system_prompt },
+									{ role = "user",   content = require("avante.providers.openai").get_user_message(code_opts) },
+								},
+								temperature = 0.5,
+								max_tokens = 4096,
+								stream = true,
+							},
+						}
+					end,
+					-- OpenRouter follows OpenAI's response format, so we can use the OpenAI parser
+					parse_response_data = function(data_stream, event_state, opts)
+						require("avante.providers").openai.parse_response(data_stream,
+							event_state, opts)
+					end,
+				},
+				openrouterNova = {
+					endpoint = "https://openrouter.ai/api/v1/chat/completions",
+					model = "amazon/nova-pro-v1",
 					api_key_name = "OPENROUTER_API_KEY",
 					parse_curl_args = function(opts, code_opts)
 						return {

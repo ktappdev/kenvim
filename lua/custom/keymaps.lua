@@ -111,3 +111,9 @@ vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 vim.keymap.set('n', 'tf', [[<Cmd>:ToggleTerm size=40 dir=cwd direction=float<CR>]], { desc = '[t]oggle [f]loating Term' })
 vim.keymap.set('n', 'tb', [[<Cmd>:ToggleTerm size=15 dir=cwd direction=horizontal<CR>]],
   { desc = '[t]oggle [b]ottom Term' })
+
+
+vim.keymap.set('n', '<C-j>', '<cmd>:Treewalker Down<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<C-k>', '<cmd>:Treewalker Up<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<C-h>', '<cmd>:Treewalker Left<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<C-l>', '<cmd>:Treewalker Right<CR>', { noremap = true, silent = false })
