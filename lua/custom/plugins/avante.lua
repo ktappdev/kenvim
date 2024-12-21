@@ -7,7 +7,7 @@ return {
 		build = "make",
 		-- opts = {},
 		opts = {
-			provider = "openrouterNova", -- available openrouterOpenAi also openai directly
+			provider = "openrouterClaude", -- available openrouterOpenAi also openai directly
 			-- openai = {
 			-- 	endpoint = "https://api.openai.com/v1",
 			-- 	model = "gpt-4o",
@@ -59,9 +59,9 @@ return {
 							event_state, opts)
 					end,
 				},
-				openrouterNova = {
+				openrouterClaude = {
 					endpoint = "https://openrouter.ai/api/v1/chat/completions",
-					model = "amazon/nova-pro-v1",
+					model = "anthropic/claude-3.5-sonnet",
 					api_key_name = "OPENROUTER_API_KEY",
 					parse_curl_args = function(opts, code_opts)
 						return {

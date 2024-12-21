@@ -4,6 +4,15 @@ vim.g.maplocalleader = ' '
 vim.cmd [[
   autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 ]]
+
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.cmd("silent! :up")
+  end
+})
+
+
+vim.opt.updatetime = 300
 -- Set number of spaces for indentation
 -- vim.opt.shiftwidth = 4
 
@@ -60,7 +69,7 @@ vim.opt.number = true
 --  Experiment for yourself to see if you like itsss!
 vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = ''
+-- vim.opt.mouse = ''
 --
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false

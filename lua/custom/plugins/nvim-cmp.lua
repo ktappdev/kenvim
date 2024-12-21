@@ -1,5 +1,6 @@
 return {
   { -- Autocompletion
+    
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
@@ -224,10 +225,7 @@ return {
             luasnip.lsp_expand(args.body)
           end,
         },
-        completion = {
-          completeopt = 'menu,menuone,noinsert',
-          autocomplete = false,
-        },
+        completion = { completeopt = 'menu,menuone,noinsert' },
 
         mapping = cmp.mapping.preset.insert {
           ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -270,7 +268,7 @@ return {
         },
 
         event_triggered_behavior = {
-          autocomplete = false,
+          autocomplete = true,
         },
       }
     end,
