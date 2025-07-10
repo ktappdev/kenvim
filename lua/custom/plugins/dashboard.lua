@@ -1,6 +1,6 @@
 return {
   'goolord/alpha-nvim',
-  enabled = false,
+  enabled = true,
   event = 'VimEnter',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
@@ -34,7 +34,7 @@ return {
     end
 
     dashboard.section.footer.val = {
-      centerText('Make it with Kenvim: Simplicity, Power, and Efficiency', 50),
+      centerText('LETS GO!', 50),
       ' ',
       -- centerText("NvimOnMy_Way❤️", 50),
       -- " ",
