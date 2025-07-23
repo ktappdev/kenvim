@@ -5,8 +5,9 @@ return {
     lazy = true,
     event = 'VeryLazy',
     build = 'make',
-    -- opts = {},
-    provider = 'deepseek',
+    opts = {
+
+    provider = 'openrouter',
     providers = {
       deepseek = {
         __inherited_from = 'openai',
@@ -18,10 +19,10 @@ return {
         __inherited_from = 'openai',
         endpoint = 'https://openrouter.ai/api/v1',
         api_key_name = 'OPENROUTER_API_KEY',
-        model = 'deepseek/deepseek-r1',
+        model = 'moonshotai/kimi-k2',
       },
     },
-    opts = {},
+    },
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       'stevearc/dressing.nvim',

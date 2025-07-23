@@ -22,8 +22,8 @@ return {
       "                                                                                      " }
 
     dashboard.section.buttons.val = {
-      -- dashboard.button("n", "   New file", ":ene <BAR> startinsert <CR>"),
-      -- dashboard.button("c", "   Configuration", ":e ~/.config/kenvim/init.lua<CR>"),
+      dashboard.button("n", "   New file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("c", "   Configuration", ":e ~/.config/kenvim/init.lua<CR>"),
     }
 
     function centerText(text, width)
